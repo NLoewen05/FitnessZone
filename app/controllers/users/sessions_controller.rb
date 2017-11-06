@@ -1,5 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
-  include Accesible
+  include Accessible
   skip_before_action :check_user, only: :destroy
   # before_action :configure_sign_in_params, only: [:create]
 
