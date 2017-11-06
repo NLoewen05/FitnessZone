@@ -7,7 +7,9 @@ end
 
 # Project specific gems
 gem 'devise'
-
+gem 'activeadmin'
+gem 'semantic-ui-sass'
+gem 'rails_12factor', group: :production
 
 
 
