@@ -8,5 +8,6 @@
     <% @products.each do |product| %>
     <h2><%= product.name %></h2>
     <p><%= product.caption %></p>
+    <%= link_to image_tag(product.image.url(:med)), product.image.url %>
     <% end %>
     </main>

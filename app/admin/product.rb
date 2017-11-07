@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
-  permit_params :name, :weight, :price, :description, :image, :caption, :product_category_id
-
+  permit_params :name, :weight, :price, :description, :image, :caption
+  # , :product_category_id
 
 form :html => { :enctype => "multipart/form-data" } do |f|
    f.inputs "Details" do
@@ -9,7 +9,7 @@ form :html => { :enctype => "multipart/form-data" } do |f|
     f.input :description
     f.input :price
     f.input :caption
-    f.input :product_category_id
+    # f.input :product_category_id
     f.input :image, :as => :file
   end
   f.actions

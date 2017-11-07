@@ -92,7 +92,6 @@ ActiveRecord::Schema.define(version: 20171107173239) do
     t.float "weight"
     t.decimal "price"
     t.text "description"
-    t.string "picture"
     t.string "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
