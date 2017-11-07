@@ -6,3 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+
+  provinces = ['Alberta', 'British Columbia', 'Manitoba',
+              'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia',
+              'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan']
+
+  provinces.each { |p| Province.create!(:name => p) }
