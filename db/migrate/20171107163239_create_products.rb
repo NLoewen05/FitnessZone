@@ -5,7 +5,6 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.float :weight
       t.decimal :price
       t.text :description
-      t.string :picture
       t.string :caption
 
 
