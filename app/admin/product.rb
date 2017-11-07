@@ -5,10 +5,10 @@ ActiveAdmin.register Product do
 form :html => { :enctype => "multipart/form-data" } do |f|
    f.inputs "Details" do
     f.input :name
+    f.input :weight
     f.input :description
     f.input :price
-    f.input :stock_quantity
-    f.input :category
+    f.input :caption
     f.input :image, :as => :file
   end
   f.actions
