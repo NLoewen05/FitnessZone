@@ -1,3 +1,3 @@
 class Province < ApplicationRecord
-  belongs_to :address
+  has_many :address
 end
