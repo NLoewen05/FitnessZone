@@ -10,7 +10,7 @@ form :html => { :enctype => "multipart/form-data" } do |f|
     f.input :price
     f.input :caption
     # f.input :product_category_id
-    f.input :image, :as => :file
+    f.file_field :image
   end
   f.actions
  end
