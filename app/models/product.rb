@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   # belongs_to :product_category
   has_many :orders
+  belongs_to :product_category
+
   validates :name, :weight, :price, :description, :caption, presence: true
 
   has_attached_file :image, styles: { small: "64x64", med: "100x100", large: "200x200" }

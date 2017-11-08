@@ -12,3 +12,7 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 #               'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan']
 
 # provinces.each { |p| Province.create!(:name => p) }
+
+product_categories = ['Pre Workout', 'Protein', 'BCAAs', 'Vitamins' ]
+
+product_categories.each { |p| ProductCategory.create!(:name => p)}
