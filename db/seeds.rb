@@ -16,3 +16,4 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 product_categories = ['Pre Workout', 'Protein', 'BCAAs', 'Vitamins' ]
 
 product_categories.each { |p| ProductCategory.create!(:name => p)}
+

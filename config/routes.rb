@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :pages
   root to: 'pages#home', as: 'home'
 
+  get 'product/:id',  to: 'pages#details', id: '/\d+/', as: 'details'
+
   get 'about', to: 'pages#about', as: 'about'
 
   get 'contact', to: 'pages#contact', as: 'contact'

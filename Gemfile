@@ -12,6 +12,7 @@ gem 'semantic-ui-sass'
 gem 'rails_12factor', group: :production
 gem 'paperclip'
 gem 'aws-sdk', '~>2.3'
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

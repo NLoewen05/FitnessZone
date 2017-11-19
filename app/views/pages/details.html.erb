@@ -1,0 +1,7 @@
+<h1><%= @products.name %></h1>
+
+<p><%= @products.description %></p>
+<p><%= image_tag @products.image.url(:large) %></p>
+<p>
+  <%= link_to "Back", home_path %>
+</p>
