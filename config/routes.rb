@@ -16,7 +16,9 @@ Rails.application.routes.draw do
 
   get 'categories/:id', to: 'pages#categories', id: '\/d+/', as: 'categories'
 
+  get 'new', to: 'pages#new_product', as: 'new'
 
+  get 'updated', to: 'pages#updated_product', as: 'recently_updated'
 
   root to: 'pages#home', as: 'home'
 end
