@@ -1,1 +1,7 @@
-Call @ categories
+<div class="ui vertical menu">
+  <div class="item">
+    <div class="header">Products</div>
+    <div class="menu">
+    <% @categories.each do |cat| %>
+      <%= link_to "cat.name", categories_path(cat), :class=> "item" %>
+    <% end %>

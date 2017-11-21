@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about'
 
   get 'contact', to: 'pages#contact', as: 'contact'
+
+  get 'product/:productcategory', to: 'pages#category_search', id: '\/d+/', as: 'categories'
 end
