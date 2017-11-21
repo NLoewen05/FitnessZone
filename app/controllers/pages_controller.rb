@@ -11,4 +11,7 @@ class PagesController < ApplicationController
   def contact
     @contact = Contact.first
   end
+  def categories
+    @products = Product.where('product_category_id = ?', params[:id].to_i).page(params[:page]).per(12)
+  end
 end

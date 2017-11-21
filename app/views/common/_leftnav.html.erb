@@ -3,7 +3,7 @@
     <div class="header">Product Categories</div>
     <div class="menu">
     <% @categories.each do |cat| %>
-      <%= link_to "cat.name", categories_path(cat), :class=> "item" %>
+      <%= link_to cat.name, categories_path(cat), :class=> "item" %>
     <% end %>
   </div>
 </div>
