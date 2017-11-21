@@ -32,11 +32,11 @@ class PagesController < ApplicationController
     end
   end
 
-  def new_products
+  def new_product
     @products = Product.where("created_at >= ?", 2.days.ago.utc).order(:created_at).page(params[:page]).per(12)
   end
 
-  def updated_products
+  def updated_product
     @products = Product.where("updated_at >= ?", 2.days.ago.utc).order(:updated_at).page(params[:page]).per(12)
   end
 
