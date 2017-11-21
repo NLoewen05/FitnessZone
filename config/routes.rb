@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get 'search_result', to: 'pages#search_result', as: 'search_result'
 
+  get 'product/new', to: 'pages#new_product', as: 'new'
+
+  get 'product/updated', to: 'pages#updated_product', as: 'recently_updated'
+
   get 'product/:id',  to: 'pages#details', id: '/\d+/', as: 'details'
 
   get 'about', to: 'pages#about', as: 'about'
@@ -15,10 +19,6 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact', as: 'contact'
 
   get 'categories/:id', to: 'pages#categories', id: '\/d+/', as: 'categories'
-
-  get 'new', to: 'pages#new_product', as: 'new'
-
-  get 'updated', to: 'pages#updated_product', as: 'recently_updated'
 
   root to: 'pages#home', as: 'home'
 end
