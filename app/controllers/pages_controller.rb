@@ -19,7 +19,7 @@ class PagesController < ApplicationController
     @products = Product.where('product_category_id = ?', params[:id].to_i).page(params[:page]).per(12)
   end
   def search_result
-    unless(params.has_key?(:search))
+    unless(params[:search].blank?)
 
       wildcard_keywords = '%' + params[:search] + '%'
 
