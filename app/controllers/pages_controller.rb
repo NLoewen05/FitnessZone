@@ -19,12 +19,15 @@ class PagesController < ApplicationController
     @products = Product.where('product_category_id = ?', params[:id].to_i).page(params[:page]).per(12)
   end
   def search_result
-    wildcard_keywords = '%' + params[:search] + '%'
+    unless(params.has_key?(:search))
 
-    if params[:category].to_i == 0
-      @products = Product.where('name LIKE ? OR description LIKE ?', wildcard_keywords, wildcard_keywords).page(params[:page]).per(12)
-    else
-      @products = Product.where('name LIKE ? OR description LIKE ?', wildcard_keywords, wildcard_keywords).where('product_category_id = ?', params[:category].to_i).page(params[:page]).per(12)
+      wildcard_keywords = '%' + params[:search] + '%'
+
+      if params[:category].to_i == 0
+        @products = Product.where('name LIKE ? OR description LIKE ?', wildcard_keywords, wildcard_keywords).page(params[:page]).per(12)
+      else
+        @products = Product.where('name LIKE ? OR description LIKE ?', wildcard_keywords, wildcard_keywords).where('product_category_id = ?', params[:category].to_i).page(params[:page]).per(12)
+      end
     end
   end
 
