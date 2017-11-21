@@ -32,9 +32,14 @@
 
     <% end %>
     </div>
-      <div class="ui search">
-        <input class="prompt" type="text" placeholder="Search">
-      <div class="results"></div>
+    <%= form_tag("search_result", method: "get") do %>
+    <div class="ui search">
+      <div class="ui icon input">
+        <%= text_field_tag("search", "", class:'prompt', placeholder:'Search') %>
+        <i class="search icon"></i>
+      </div>
     </div>
+    <%= select_tag 'category', options_from_collection_for_select(@categories, "id", "name", "0"), :include_blank => true %>
+    <% end %>
   </div>
 </div>

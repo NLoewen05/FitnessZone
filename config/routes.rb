@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact', as: 'contact'
 
   get 'categories/:id', to: 'pages#categories', id: '\/d+/', as: 'categories'
+
+  get 'search_result', to: 'pages#search_result', as: 'search_result'
 end
