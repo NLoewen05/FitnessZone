@@ -1,14 +1,14 @@
 class PagesController < ApplicationController
   def home
-    @products = Product.order("name").page(params[:page]).per()
+    @products = Product.order("name").page(params[:page]).per(12)
   end
   def details
     @products = Product.find(params[:id])
   end
   def about
-    @about = About.all.first
+    @about = About.first
   end
   def contact
-    @contact = Contact.all.first
+    @contact = Contact.first
   end
 end
