@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :pages
-  root to: 'pages#home', as: 'home'
+
+  # get 'search_result', to: 'pages#search_result', as: 'search_result' No idea why this doesn't work properly
 
   get 'product/:id',  to: 'pages#details', id: '/\d+/', as: 'details'
 
@@ -15,5 +16,5 @@ Rails.application.routes.draw do
 
   get 'categories/:id', to: 'pages#categories', id: '\/d+/', as: 'categories'
 
-  get 'search_result', to: 'pages#search_result', as: 'search_result'
+  root to: 'pages#home', as: 'home'
 end

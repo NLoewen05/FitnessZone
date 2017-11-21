@@ -32,7 +32,7 @@
 
     <% end %>
     </div>
-    <%= form_tag("search_result", method: "get") do %>
+    <%= form_tag({controller: "pages", action: "search_result"}, method: "get") do %>
     <div class="ui search">
       <div class="ui icon input">
         <%= text_field_tag("search", "", class:'prompt', placeholder:'Search') %>
