@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :pages
 
-  # get 'search_result', to: 'pages#search_result', as: 'search_result' No idea why this doesn't work properly
+  get 'search_result', to: 'pages#search_result', as: 'search_result'
 
   get 'product/:id',  to: 'pages#details', id: '/\d+/', as: 'details'
 
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact', as: 'contact'
 
   get 'categories/:id', to: 'pages#categories', id: '\/d+/', as: 'categories'
+
+
 
   root to: 'pages#home', as: 'home'
 end
