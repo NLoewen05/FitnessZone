@@ -1,4 +1,4 @@
-<div class="ui vertical menu">
+<div class="ui vertical menu fluid">
   <div class="item">
     <div class="header">Product Categories</div>
     <div class="menu">
@@ -6,7 +6,7 @@
       <%= link_to cat.name, categories_path(cat), :class=> "item" %>
     <% end %>
   </div>
- <div class="header"></div>
+ <div class="header">Special Searches</div>
     <div class="menu">
       <%= link_to "New Products", new_path, :class=> "item" %>
       <%= link_to "Recently updated", recently_updated_path, :class=> "item" %>

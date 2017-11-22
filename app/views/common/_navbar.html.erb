@@ -32,14 +32,14 @@
 
     <% end %>
     </div>
-    <%= form_tag({controller: "pages", action: "search_result"}, method: "get") do %>
+    <%= form_tag({controller: "pages", action: "search_result"}, method: "get", class: 'item') do %>
     <div class="ui search">
       <div class="ui icon input">
         <%= text_field_tag("search", "", class:'prompt', placeholder:'Search') %>
         <i class="search icon"></i>
       </div>
     </div>
-    <%= select_tag 'category', options_from_collection_for_select(@categories, "id", "name", "0"), :include_blank => true %>
+    <%= select_tag 'category', options_from_collection_for_select(@categories, "id", "name", "0"), :include_blank => true, class: 'item'%>
     <% end %>
   </div>
 </div>
