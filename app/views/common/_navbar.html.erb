@@ -1,5 +1,5 @@
 <!-- Following Menu -->
-<div class="ui massive top menu">
+<div class="ui top  massive menu">
   <!-- <div class="item">
     <img src="/images/logo.png">
   </div> -->
@@ -32,14 +32,15 @@
 
     <% end %>
     </div>
-    <%= form_tag({controller: "pages", action: "search_result"}, method: "get", class: 'item') do %>
+
+    <%= form_tag({controller: "pages", action: "search_result"}, method: "get", class:"item") do %>
     <div class="ui search">
       <div class="ui icon input">
         <%= text_field_tag("search", "", class:'prompt', placeholder:'Search') %>
         <i class="search icon"></i>
       </div>
     </div>
-    <%= select_tag 'category', options_from_collection_for_select(@categories, "id", "name", "0"), :include_blank => true, class: 'item'%>
+    <%= select_tag 'category', options_from_collection_for_select(@categories, "id", "name", "0"), :include_blank => true, class: 'ui fluid dropdown'%>
     <% end %>
   </div>
 </div>
