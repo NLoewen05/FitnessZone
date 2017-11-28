@@ -1,6 +1,6 @@
 
-    <% @products.each do |product| %>
     <div class="ui cards five column grid">
+    <% @products.each do |product| %>
         <div class="ui card">
             <%= link_to details_path(product), class:"image"  do %>
             <%= image_tag(product.image.url(:large)) %>
