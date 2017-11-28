@@ -7,7 +7,6 @@
         <div class="four wide column">
             <h2><%= product.name %></h2>
             <p><%= product.caption %></p>
-            <p>Image link below</p>
             <%= link_to image_tag(product.image.url(:large)), details_path(product) %>
         </div>
         <% end %>

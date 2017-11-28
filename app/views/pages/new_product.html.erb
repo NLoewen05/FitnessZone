@@ -4,11 +4,17 @@
 <div class="ui four column centered grid">
   <% @products.each do |prod| %>
   <div class="four wide column">
-            <h2><%= prod.name %></h2>
-            <p><%= prod.caption %></p>
-            <%= link_to image_tag(prod.image.url(:large)), details_path(prod) %>
-        </div>
+    <div class="ui card">
+      <div class="content">
+        <h2><%= prod.name %></h2>
+        <p><%= prod.caption %></p>
+      </div>
+      <div class="image">
+        <%= link_to image_tag(prod.image.url(:large)), details_path(prod) %>
+      </div>
+    </div>
   <% end %>
+  </div>
 </div>
 <% end %>
 

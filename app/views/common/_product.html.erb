@@ -1,0 +1,18 @@
+
+    <% @products.each do |product| %>
+    <div class="ui cards five column grid">
+        <div class="ui card">
+            <%= link_to details_path(product), class:"image"  do %>
+            <%= image_tag(product.image.url(:large)) %>
+            <% end %>
+
+            <div class="content">
+                <%= link_to product.name,  details_path(product), class:"header" %>
+                <div class="meta">
+                    <%= product.caption %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
+<%= paginate @products %>
