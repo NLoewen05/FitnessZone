@@ -2,7 +2,12 @@
 
 <p><%= @products.description %></p>
 <p><%= image_tag @products.image.url(:large) %></p>
-<p><%= link_to("Add to Cart", add_to_cart_path(@products), method:"post") %></p>
+<p><%= link_to(add_to_cart_path(@products), method:"post") do %>
+  <button class="ui green button">Add to Cart</button>
+  <% end %>
+
+</p>
 <p>
-  <%= link_to "Back", home_path %>
+  <%= link_to "Back", home_path%>
+
 </p>

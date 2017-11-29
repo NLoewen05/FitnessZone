@@ -29,7 +29,9 @@
                       <h4 class="ui image header">
                           <div class="content">
                           <%= item.name %>
-                          <%= image_tag(item.image.url(:large)) %>
+                          <%= link_to details_path(item.id), class:"image"  do %>
+                          <%= image_tag(item.image.url(:small)) %>
+                          <% end %>
                         </div>
                       </h4>
                     </td>
