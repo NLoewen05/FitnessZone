@@ -20,5 +20,18 @@ Rails.application.routes.draw do
 
   get 'categories/:id', to: 'pages#categories', id: '\/d+/', as: 'categories'
 
+  post 'product/:id/add_to_cart', to: 'order#add_to_cart', as: 'add_to_cart', number: /\d+/
+
+  post 'shopping_cart/remove_from_cart/:id', to: 'order#remove_from_cart', as: 'remove_from_cart', number: /\d+/
+
+  post 'shopping_cart/increase_item_quantity/:id', to:'order#increase_item_quantity', as: 'increase_item_quantity', number: /\d+/
+
+  post 'shopping_cart/decrease_item_quantity/:id', to:'order#decrease_item_quantity', as: 'decrease_item_quantity', number: /\d+/
+
+  post 'shopping_cart/remove_all_from_cart', to: 'order#remove_all_from_cart', as: 'remove_all_from_cart'
+
+  get 'shopping_cart', to: 'order#index', as: 'shopping_cart'
+
   root to: 'pages#home', as: 'home'
 end
+

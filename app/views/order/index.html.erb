@@ -1,0 +1,63 @@
+
+  <% if @products_in_cart.empty? %>
+  <div class="ui icon message">
+    <i class="shop icon"></i>
+    <div class="content">
+      <div class="header">There are no items in your cart</div>
+    </div>
+  </div>
+  <% else %>
+    <h2 class="ui header">Your Cart</h2>
+      <div class="ui grid">
+        <section class="twelve wide column">
+          <table class="ui basic celled table">
+            <thead>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>
+                <%= button_to "Remove All", remove_all_from_cart_path,
+                                            method: 'post',
+                                            class: 'ui tiny red button',
+                                            data: { confirm: "Are you sure?"} %>
+            </th>
+            </thead>
+            <tbody>
+                <% @products_in_cart.each do |item| %>
+                <tr>
+                    <td class="collapsing">
+                      <h4 class="ui image header">
+                          <div class="content">
+                          <%= item.name %>
+                          <%= image_tag(item.image.url(:large)) %>
+                        </div>
+                      </h4>
+                    </td>
+                    <td>
+                      <%= number_to_currency(item.price, precision: 2) %>
+                    </td>
+                    <td>
+                      <%= item.quantity %>
+                    </td>
+                    <td class="ul two buttons">
+                      <%= link_to "Decrease", decrease_item_quantity_url(item.id), method: 'post', class: 'ui basic red button' %>
+                      <%= link_to "Increase", increase_item_quantity_url(item.id), method: 'post', class: 'ui basic green button' %>
+                    </td>
+
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </section>
+<!--         <aside class="four wide column">
+          <div class="ui fluid card">
+            <div class="content">
+              <h2 class="ui dividing header center aligned">Your Order</h2>
+            </div>
+            <div class="extra content">
+
+            </div>
+          </div>
+        </aside> -->
+      </div>
+  <% end %>
