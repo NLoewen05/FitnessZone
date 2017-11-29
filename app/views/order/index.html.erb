@@ -39,9 +39,16 @@
                     <td>
                       <%= item.quantity %>
                     </td>
-                    <td class="ul two buttons">
-                      <%= link_to "Decrease", decrease_item_quantity_url(item.id), method: 'post', class: 'ui basic red button' %>
-                      <%= link_to "Increase", increase_item_quantity_url(item.id), method: 'post', class: 'ui basic green button' %>
+                    <td>
+                      <div class ="ui buttons">
+                        <%= link_to decrease_item_quantity_url(item.id), method: 'post', class: '' do %>
+                        <button class="ui negative button">Decrease</button>
+                        <% end %>
+                        <div class="or"></div>
+                        <%= link_to increase_item_quantity_url(item.id), method: 'post', class: '' do  %>
+                        <button class="ui positive button ">Increase</button>
+                        <% end %>
+                      </div>
                     </td>
 
                 </tr>

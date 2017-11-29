@@ -42,10 +42,14 @@
     </div>
     <%= select_tag 'category', options_from_collection_for_select(@categories, "id", "name", "0"), :include_blank => true, class: 'ui fluid dropdown'%>
     <% end %>
-
-    <%= link_to shopping_cart_path, :class=>"item" do %>
-      <i class="shop icon"></i>
+    <div class="item">
+    <%= button_to shopping_cart_path, :class=>"ui animated button", method: "get" do %>
+      <div class="visible content">
+        <i class="shop icon"></i>
+      </div>
+      <div class="hidden content">Cart</div>
     <% end %>
+    </div>
 
   </div>
 </div>
