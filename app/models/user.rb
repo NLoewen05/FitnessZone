@@ -24,6 +24,8 @@ class User < ApplicationRecord
 
   validates :firstName, :lastName, :email, :password, presence: true
 
+  accepts_nested_attributes_for :addresses
+
   attr_accessor :login
 
   def self.find_for_database_authentication(warden_conditions)

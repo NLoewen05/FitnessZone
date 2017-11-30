@@ -1,4 +1,4 @@
 class AddressType < ApplicationRecord
-  validates :type, presence: true
-  belongs_to :address
+  validates :name, presence: true
+  has_many :addresses
 end

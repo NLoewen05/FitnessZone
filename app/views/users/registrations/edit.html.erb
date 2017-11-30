@@ -31,6 +31,35 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <%= fields_for :addresses do |address_field| %>
+    <%= address_field.hidden_field :id %>
+    <%= address_field.label :address_type %><br />
+
+    <div class="fields">
+      <div class="twelve wide field">
+        <%= address_field.label :address_line %><br />
+        <%= address_field.text_field :address_line %>
+      </div>
+      <div class="four wide field">
+        <%= address_field.label :city %><br />
+        <%= address_field.text_field :city %>
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <%= address_field.label :province_id %><br />
+        <%= address_field.collection_select(:province_id, Province.all, :id, :name ) %>
+      </div>
+      <div class="field">
+        <%= address_field.label :postalCode %><br />
+        <%= address_field.text_field :postalCode %>
+      </div>
+    </div>
+    <%= f.add_nested_fields_link :addresses, 'Add New Address', class: "ui button" %>
+    <%= address_field.remove_nested_fields_link 'Delete Address', data: { confirm: 'Are you sure?'}, class: "ui button" %>
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

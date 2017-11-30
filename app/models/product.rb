@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
-
-  has_many :orders
   belongs_to :product_category
+  has_many :line_items
 
   validates :name, :weight, :price, :description, :caption, presence: true
 

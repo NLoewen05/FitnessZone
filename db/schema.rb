@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121163443) do
+ActiveRecord::Schema.define(version: 20171129202220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20171121163443) do
   end
 
   create_table "address_types", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20171121163443) do
     t.bigint "user_id"
     t.bigint "address_type_id"
     t.bigint "province_id"
+    t.string "address_line"
     t.index ["address_type_id"], name: "index_addresses_on_address_type_id"
     t.index ["province_id"], name: "index_addresses_on_province_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -77,6 +78,17 @@ ActiveRecord::Schema.define(version: 20171121163443) do
     t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.float "price"
+    t.integer "quantity"
+    t.bigint "product_id"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -148,6 +160,8 @@ ActiveRecord::Schema.define(version: 20171121163443) do
   add_foreign_key "addresses", "address_types"
   add_foreign_key "addresses", "provinces"
   add_foreign_key "addresses", "users"
+  add_foreign_key "line_items", "orders"
+  add_foreign_key "line_items", "products"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "product_categories"

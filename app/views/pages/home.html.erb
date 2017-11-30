@@ -1,1 +1,11 @@
+<% if flash[:notice] %>
+  <div class="ui success message">
+    <i class="close icon"></i>
+    <div class="header">
+      <%= flash[:notice] %>
+    </div>
+  </div>
+  <% end %>
+
+
 <%= render 'common/product' %>

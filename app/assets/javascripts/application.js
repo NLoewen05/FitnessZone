@@ -14,3 +14,5 @@
 //= require turbolinks
 //= require_tree .
 //= require semantic-ui
+//= require nested_form_fields
+//= require pages

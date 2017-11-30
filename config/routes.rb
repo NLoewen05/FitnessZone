@@ -32,6 +32,10 @@ Rails.application.routes.draw do
 
   get 'shopping_cart', to: 'order#index', as: 'shopping_cart'
 
+  get 'check_customer', to: 'order#check_customer', as: 'check_customer'
+
+  get 'check_out', to: 'order#check_out', as: 'check_out'
+
   root to: 'pages#home', as: 'home'
 end
 

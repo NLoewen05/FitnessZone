@@ -66,4 +66,24 @@ class OrderController < ApplicationController
     end
 
   end
+
+  def check_customer
+    if !user_signed_in? || current_user == nil
+      redirect_to new_user_registration_path
+    else
+      redirect_to check_out_url
+    end
+  end
+
+  def check_out
+    user = User.find(current_user.id)
+    order = user.orders.new
+    session[:shopping_cart].each do |product, quantity|
+      price = Product.find(product).price
+      prod = Product.find(product)
+      order.line_items.build(product: prod, price: price, quantity: quantity)
+    end
+    order.save
+    redirect_to home_url, notice: "Order Submitted Succesfully"
+  end
 end
